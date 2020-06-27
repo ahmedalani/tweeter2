@@ -8,5 +8,4 @@ $(document).ready(function () {
       $(this).find('.counter').text(counterValue).removeClass('tweet-too-long');
     }
   });
-  console.log('object')
-})
+});
