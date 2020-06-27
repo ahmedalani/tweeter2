@@ -1,9 +1,9 @@
-.tweet-container {
+#tweet-container {
   padding: 2em;
 }
 article.tweet {
   border: 2px solid black;
-  padding: 5px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -15,6 +15,7 @@ article.tweet:hover  a {
 }
 article.tweet header {
   background-color: #f4f1ec;
+  margin-top: 0;
   height: 2em;
   display: flex;
   justify-content: space-between;

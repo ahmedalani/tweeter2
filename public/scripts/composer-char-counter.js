@@ -8,9 +8,5 @@ $(document).ready(function () {
       $(this).find('.counter').text(counterValue).removeClass('tweet-too-long');
     }
   });
-
+  console.log('object')
 })
-// $('#tweet-text').on('keyup', function (e) {
-//   let counterValue = 140 - this.value.length;
-//   $('.counter').text(counterValue.toString());
-// });
