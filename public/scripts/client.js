@@ -34,7 +34,7 @@ $(document).ready(function () {
   const renderTweets = function (data) {
     for (const tweet of data) {
       let $tweet = createTweetElement(tweet)
-      $('#tweet-container').append($tweet);
+      $('#tweet-container').prepend($tweet);
     };
   };
 
@@ -49,18 +49,16 @@ $(document).ready(function () {
     } else {
       console.log($('.new-tweet-form').serialize())
       $.ajax({
-        url: '/',
+        url: '/tweets',
         method: 'POST',
         data: $('.new-tweet-form').serialize()
       })
+      .then(function(){
+        $('.new-tweet-form textarea').val('');
+        loadTweets();
+      });
     }
-    // let data = [];
-    // let tweet = { user: {}, content: {}, created_at: 0 };
-    // tweet.content.text = $('.new-tweet-form textarea').val();
 
-    // .then(function (data) {
-    //   loadTweets();
-    // })
   });
 
   const loadTweets = function () {
