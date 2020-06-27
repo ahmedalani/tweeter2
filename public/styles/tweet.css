@@ -1,0 +1,39 @@
+.tweet-container {
+  padding: 2em;
+}
+article.tweet {
+  border: 2px solid black;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+article.tweet:hover {
+  border: 2px solid red;
+}
+article.tweet:hover  a {
+  display: inline;
+}
+article.tweet header {
+  background-color: #f4f1ec;
+  height: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.handle {
+  display: none;
+}
+article.tweet header div {
+  display: flex;
+  align-items: center;
+}
+article.tweet footer {
+  height: 2em;
+  border-top: 3px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+article.tweet footer div {
+  display: flex;
+  align-items: center;
+}

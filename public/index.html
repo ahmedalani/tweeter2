@@ -22,9 +22,11 @@
   <!-- header CSS -->
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
-  <!-- new-tweet CSS -->
+  <!-- new-tweet form CSS -->
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+  <!-- tweet container CSS -->
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -63,6 +65,30 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+    </section>
+    <section class="tweet-container">
+      <article class="tweet">
+        <header>
+          <div>
+            <img src="./images/profile-hex.png" alt="profile-pic" height="45" width="45">
+            <p>Name</p>
+          </div>
+          <div>
+            <a class="handle" href="./localhost:8080/yourname">@yourName</a>
+          </div>
+        </header>
+        <p>yamean 3leha</p>
+        <footer>
+          <div>
+            <time>10 days ago</time>
+          </div>
+          <div>
+            <button>F</button>
+            <button>S</button>
+            <button>H</button>
+          </div>
+        </footer>
+      </article>
     </section>
   </main>
 </body>
