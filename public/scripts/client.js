@@ -54,12 +54,14 @@ $(document).ready(function () {
 
   // handle new tweet submit form, create data and send it to server
   $('.new-tweet-form').submit(function (e) {
-    e.preventDefault()
+    e.preventDefault();
+    $('.error-msg').slideUp(10)
+
     let text = $('.new-tweet-form textarea').val();
     if (text === '' || text === null) {
-      alert('type something, fool!')
+      $('.error-msg').text('!!type something, plz!!').slideDown(100)
     } else if (text.length > 140) {
-      alert('tweet is too long, fool!')
+      $('.error-msg').text('tweet is too long, exceeded the 140 character limit per tweet!!').slideDown(100)
     } else {
       $.ajax({
         url: '/tweets',
