@@ -96,8 +96,10 @@ $(document).ready(function () {
   // scroll up btn
   $(window).scroll(function () {
     if ($(this).scrollTop() > 40) {
+      $('#new-tweet-btn').fadeOut();
       $('#scroll-up').fadeIn();
     } else {
+      $('#new-tweet-btn').fadeIn();
       $('#scroll-up').fadeOut();
     }
   });

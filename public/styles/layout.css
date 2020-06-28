@@ -37,4 +37,11 @@ body {
   position: fixed;
   bottom: 25px;
   right: 25px;
+  font-size: 30px;
+  width: 80px;
+  height: 80px;
+  background: #e74c3c;
+  color: white;
+  border-radius: 35px;
+  cursor: pointer;
 }
