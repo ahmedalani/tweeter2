@@ -12,9 +12,10 @@ header div img {
   background-image: url("https://www.transparenttextures.com/patterns/transparent-square-tiles.png");
 }
 @media only screen and (min-width: 1024px) {
-  header {
+  .profile-header {
     margin: 150px 0 0 50px;
     height: 350px;
     width: 33.3%;
   }
+
 }

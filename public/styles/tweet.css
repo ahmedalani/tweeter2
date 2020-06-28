@@ -11,7 +11,7 @@ article.tweet {
 article.tweet:hover {
   border: 2px solid red;
 }
-article.tweet:hover  a {
+article.tweet:hover  .handle {
   display: inline;
 }
 article.tweet header {

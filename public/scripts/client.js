@@ -3,6 +3,8 @@ $(document).ready(function () {
   // takes a tweet object returns tweet element (html article)
   const createTweetElement = function (data) {
     const { user, content, created_at } = data;
+    let dateStamp = new Date(created_at * 1000);
+    let date = dateStamp.getDate();
     const $tweet = $(safeTemplate`
       <article class="tweet">
         <header>
@@ -17,7 +19,7 @@ $(document).ready(function () {
         <p>${content.text}</p>
         <footer>
           <div>
-            <time>${created_at}</time>
+            <time>${date} days ago</time>
           </div>
           <div>
             <button><i class="fas fa-flag"></i></button>
