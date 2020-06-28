@@ -92,4 +92,16 @@ $(document).ready(function () {
   $('#new-tweet-btn').on('click', () => {
     $('.new-tweet').toggle(500);
   });
+
+  // scroll up btn
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 40) {
+      $('#scroll-up').fadeIn();
+    } else {
+      $('#scroll-up').fadeOut();
+    }
+  });
+  $('#scroll-up').on('click', function () {
+    $("html, body").animate({ scrollTop: 0 }, 500);
+  });
 });
