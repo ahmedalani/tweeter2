@@ -3,7 +3,7 @@ $(document).ready(function () {
   // takes a tweet object returns tweet element (html article)
   const createTweetElement = function (data) {
     const { user, content, created_at } = data;
-    const $tweet = $(`
+    const $tweet = $(safeTemplate`
       <article class="tweet">
         <header>
           <div>
@@ -29,13 +29,27 @@ $(document).ready(function () {
     `);
     return $tweet;
   };
+  // escape injuctions (XSS)
+  const safeTemplate = function (strings, ...replacement) {
+    const result = strings.map((s, i) => {
+      return s + safeText(replacement[i] || '');
+    });
+    return result.join('');
+  }
+  const safeText = function (text) {
+    const div = document.createElement('div');
+    const textNode = document.createTextNode(text);
+    div.appendChild(textNode);
+    return div.innerHTML;
+  }
+
 
   // takes an array of tweet objects and append them to the tweet-container
+  // in correct order (new first)
   const renderTweets = function (data) {
-    for (const tweet of data) {
-      let $tweet = createTweetElement(tweet)
-      $('#tweet-container').prepend($tweet);
-    };
+    $('#tweet-container')
+      .empty()
+      .append(data.map(createTweetElement).reverse());
   };
 
   // handle new tweet submit form, create data and send it to server
@@ -47,16 +61,15 @@ $(document).ready(function () {
     } else if (text.length > 140) {
       alert('tweet is too long, fool!')
     } else {
-      console.log($('.new-tweet-form').serialize())
       $.ajax({
         url: '/tweets',
         method: 'POST',
         data: $('.new-tweet-form').serialize()
       })
-      .then(function(){
-        $('.new-tweet-form textarea').val('');
-        loadTweets();
-      });
+        .then(function () {
+          $('.new-tweet-form textarea').val('');
+          loadTweets();
+        });
     }
 
   });
@@ -71,35 +84,4 @@ $(document).ready(function () {
       });
   };
   loadTweets();
-});  
-
-
-  /*
-  
-  Fake data taken from initial-tweets.json
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-  */
- 
+});
