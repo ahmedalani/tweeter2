@@ -42,3 +42,10 @@ article.tweet footer div {
   display: flex;
   align-items: center;
 }
+article.tweet footer div button {
+  background-color: #f4f1ec;
+  border: none;
+}
+article.tweet footer div button:hover {
+  color: #4056A1;
+}

@@ -20,9 +20,9 @@ $(document).ready(function () {
             <time>${created_at}</time>
           </div>
           <div>
-            <button>F</button>
-            <button>S</button>
-            <button>H</button>
+            <button><i class="fas fa-flag"></i></button>
+            <button><i class="fas fa-retweet"></i></button>
+            <button><i class="fas fa-heart"></i></button>
           </div>
         </footer>
       </article>
