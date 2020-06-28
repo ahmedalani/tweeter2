@@ -1,12 +1,12 @@
+/* error msg class, new-tweet section class hidden */
+.hidden {
+  display: none;
+}
 .new-tweet {
   padding: 2em;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
-/* error msg class hidden */
-.hidden {
-  display: none;
 }
 .error-msg {
   width: 100%;

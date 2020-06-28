@@ -86,4 +86,10 @@ $(document).ready(function () {
       });
   };
   loadTweets();
+
+  // hide the new tweet form and togle to tweet
+  $('.new-tweet').hide();
+  $('#new-tweet-btn').on('click', () => {
+    $('.new-tweet').toggle(500);
+  });
 });
